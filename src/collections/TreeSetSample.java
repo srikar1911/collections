@@ -1,6 +1,5 @@
-package Collections;
+package collections;
 
-import java.util.Objects;
 import java.util.TreeSet;
 
 public class TreeSetSample {

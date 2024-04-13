@@ -1,31 +1,36 @@
-package Collections;
+package collections;
 
 import java.util.Objects;
 
-public class Ex {
+public class Sa {
 
-    private String S;
     private int i;
-    public Ex(String S, int i) {
-        this.S = S;
+
+    private String a;
+
+    public Sa( int i, String a) {
+        this.a = a;
         this.i = i;
     }
 
     @Override
     public String toString() {
-        return "Ex{i=" + i + " , " + "s='" + S + "'}";
+        return "Sa{" +
+                "a='" + a + '\'' +
+                ", i=" + i +
+                '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Ex ex = (Ex) o;
-        return i == ex.i && Objects.equals(S, ex.S);
+        Sa sa = (Sa) o;
+        return i == sa.i && Objects.equals(a, sa.a);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(S, i);
+        return Objects.hash(i, a);
     }
 }

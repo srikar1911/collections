@@ -1,6 +1,4 @@
-package Collections;
-
-import org.w3c.dom.ls.LSOutput;
+package collections;
 
 import java.util.HashSet;
 

@@ -1,4 +1,4 @@
-package Threads;
+package threads;
 
 
 import static java.lang.Thread.sleep;
@@ -35,9 +35,6 @@ public class Main {
         ThreadState(currentThread);
         ThreadState(customThread);
         ThreadState(newThread);
-
-
-
     }
 
     public static void ThreadState(Thread thread){
