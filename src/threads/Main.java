@@ -7,34 +7,90 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        var currentThread = Thread.currentThread();
-        CustomThread customThread = new CustomThread();
-        Thread newThread = new Thread(() -> {
-            for (int i = 0; i < 5; i++){
-                System.out.print(" bye ");
+//        var currentThread = Thread.currentThread();
+//        ThreadState(currentThread);
+//
+//        CustomThread customThread = new CustomThread();
+//        Thread newThread = new Thread(() -> {
+//            for (int i = 0; i < 5; i++){
+//                System.out.print(" bye ");
+//            }try{
+//                Thread.sleep(250);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//       });
+//              customThread.start();
+//               newThread.start();
+//
+//        for(int i = 0; i < 5; i++){
+//            System.out.print(" hello ");
+//            try{
+//                Thread.sleep(500);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        sleep(10000);
+//        ThreadState(currentThread);
+//        ThreadState(customThread);
+//        ThreadState(newThread);
+//
+
+//
+//        EvenThread01 evenThread = new EvenThread01();
+//        Thread oddThread = new Thread(() -> {
+//            for(int i = 1; i <=10; i+=2){
+//                System.out.println("Odd Number = " + i );
+//                try{
+//                    Thread.sleep(1000);
+//                }catch (InterruptedException e){
+//                    System.out.println("OddThread interrupted!");
+//                    break;
+//
+//                }
+//            }
+//        });
+//        evenThread.start();
+//        oddThread.start();
+//
+//        try{
+//            Thread.sleep(2000);
+//        }catch (InterruptedException e){
+//            e.printStackTrace();
+//        }
+//
+//     evenThread.interrupt();
+
+        Thread newThread01 = new Thread(() -> {
+            for(int i = 0; i < 5; i++) {
+                System.out.println(i + " Thread01 ");
             }try{
-                Thread.sleep(250);
+                Thread.sleep(100);
             }catch (InterruptedException e){
-                e.printStackTrace();
+                System.out.println("Thread interrupted");
             }
         });
-        customThread.start();
-        newThread.start();
 
-
-        for(int i = 0; i < 5; i++){
-            System.out.print(" hello ");
-            try{
-                Thread.sleep(500);
+        Thread newThread02 = new Thread(() -> {
+            for(int i = 5; i < 10; i++) {
+                System.out.println(i + " Thread02 ");
+            }try{
+                Thread.sleep(100);
             }catch (InterruptedException e){
-                e.printStackTrace();
+                System.out.println("Thread interrupted");
             }
-        }
+        });
 
-        sleep(10000);
-        ThreadState(currentThread);
-        ThreadState(customThread);
-        ThreadState(newThread);
+        newThread01.start();
+        try{Thread.sleep(1);
+        }catch (InterruptedException e){}
+        newThread02.start();
+        newThread01.join();
+        newThread02.join();
+
+        System.out.println("Main Thread");
     }
 
     public static void ThreadState(Thread thread){
