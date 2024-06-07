@@ -1,19 +1,18 @@
 package samplePrograms;
 
-public class firstPrgm {
+public class Test {
 
     static int a = 5;
     static int b = 10;
-    int x;
-    int y;
+    public int x;
+  private  int y;
 
     public static void main(String[] args) {
         int p = 15;
         int q = 20;
 
-        firstPrgm p1 = new firstPrgm();
+        Test t1 = new Test();
 
-        firstPrgm p2 = new firstPrgm();
+        Test t2 = new Test();
     }
-
 }
